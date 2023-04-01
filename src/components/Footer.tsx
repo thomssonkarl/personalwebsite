@@ -14,21 +14,21 @@ function Footer() {
 
   return (
     <div className="toolbar-bottom">
-      <AppBar sx={{ backgroundColor: "#121212" }} position="static">
+      <AppBar sx={{ backgroundColor: "#121212" }} position="static" elevation={0}>
         <Toolbar >
           <Box display="flex" flexGrow={1} alignItems='center' justifyContent='center'>
             <IconButton href="mailto: thomsson_99@hotmail.com">
-              <MailIcon style={{ height: "4vh", width: "4vh", color: '#fff' }} />
+              <MailIcon sx={{ height: "4vh", width: "4vh", color: '#fff', '&:hover': {color: '#757761'}, left:0  }} />
             </IconButton>
             <IconButton
               onClick={() => redirectPage("https://www.linkedin.com/in/karl-thomsson-38203819b/")}
             >
-              <LinkedInIcon style={{ height: "4vh", width: "4vh", color: '#fff' }} />
+              <LinkedInIcon sx={{ height: "4vh", width: "4vh", color: '#fff', '&:hover': {color: '#757761'}, right: 0 }} />
             </IconButton>
             <IconButton
               onClick={() => redirectPage("https://github.com/thomssonkarl")}
             >
-              <GitHubIcon style={{ height: "4vh", width: "4vh", color: '#fff' }} />
+              <GitHubIcon sx={{ height: "4vh", width: "4vh", color: '#fff', '&:hover': {color: '#757761'} }} />
             </IconButton>
           </Box>
         </Toolbar>

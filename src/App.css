@@ -12,6 +12,19 @@
   justify-content: center;
 }
 
+.header-title {
+  font-size: 20px;
+  text-align: left;
+}
+
+.toolbar-top {
+  position: fixed;
+  top: 0;
+  display: flex;
+  width: 100vw;
+  justify-content: space-between;
+}
+
 
 .toolbar-bottom {
   position: fixed;

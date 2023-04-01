@@ -3,6 +3,7 @@ import { ReactTerminal } from "react-terminal"
 import { TerminalContextProvider } from "react-terminal"
 import Footer from './components/Footer'
 import * as Types from './ts/app_types'
+import Navbar from './components/Navbar'
 
 function App() {
 
@@ -43,6 +44,7 @@ function App() {
   
   return (
     <div className="App">
+      <Navbar />
       <TerminalContextProvider>
         <ReactTerminal
           className="terminal"
