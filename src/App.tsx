@@ -1,33 +1,65 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { ReactTerminal } from "react-terminal"
+import { TerminalContextProvider } from "react-terminal"
+import Footer from './components/Footer'
+import * as Types from './ts/app_types'
 
 function App() {
-  const [count, setCount] = useState(0)
 
+  const redirectPage = (destination : string) => {
+    window.open(destination, '_blank')
+  }
+
+  const aboutMeMessage = 'Hi! My name is Karl Thomsson. I am based in Uppsala, Sweden. I am currently studying Information Technology Engineering at Uppsala University.'
+   
+  const commands : Types.CommandsExtended = {
+    help: () => {
+      let cmds = Object.keys(commands);
+      return (
+        <span>
+          Available commands: <br/>
+          {cmds.map((cmd, i) => (
+            <span key={i}>{cmd} {i + 1 != cmds.length ? <br/> : null}</span>
+          ))}
+        </span>
+      );
+    },
+    clear: "",
+    aboutme: aboutMeMessage,
+    github: () => redirectPage("https://github.com/thomssonkarl"),
+    linkedin: () =>
+      redirectPage("https://www.linkedin.com/in/karl-thomsson-38203819b/"),
+    email: () => {
+      window.location.href = "mailto:thomsson_99@hotmail.com";
+    },
+  }
+
+  const theme: Types.TerminalTheme = {
+    themeBGColor: "#202020",
+    themeToolbarColor: "#202020",
+    themeColor: "#FFFEFC",
+    themePromptColor: "#fbfbfb",
+  }
+  
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <TerminalContextProvider>
+        <ReactTerminal
+          className="terminal"
+          commands={commands}
+          themes={{
+            theme,
+          }}
+          theme="theme"
+          welcomeMessage={
+            <span>
+              Type 'help' for instructions <br />
+            </span>
+          }
+          errorMessage="Command not found!"
+        />
+      </TerminalContextProvider>     
+      <Footer />
     </div>
   )
 }
