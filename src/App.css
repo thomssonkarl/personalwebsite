@@ -60,3 +60,40 @@
   align-items: center;
   justify-content: space-between;
 }
+/************Media queries*************/
+
+@media screen and (max-width: 768px) {
+  
+  .index_terminal__teubZ {
+    width: 80vw !important;
+    height: 45vh !important;
+  }
+  .terminal-footer {
+    width: 80vw;
+    font-size: 12px;
+  }
+
+  #terminalEditor {
+    font-size: 16px !important;
+    max-width: 80vw !important;
+  }
+}
+
+@media only screen and (orientation: landscape) and (max-height: 600px) and (max-width: 900px) {
+  
+  .index_terminal__teubZ {
+    width: 80vw !important;
+    height: 40vh !important;
+  }
+
+  #terminalEditor {
+    font-size: 16px !important;
+    height: 30vh !important;
+    max-width: 80vw !important;
+  }
+
+  .terminal-footer {
+    width: 80vw;
+    font-size: 12px;
+  } 
+}

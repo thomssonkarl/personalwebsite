@@ -17,7 +17,7 @@ function App() {
    
   const commands : Types.CommandsExtended = {
     help: () => {
-      let cmds = Object.keys(commands);
+      let cmds = Object.keys(commands)
       return (
         <span>
           Available commands: <br/>
@@ -33,7 +33,7 @@ function App() {
     linkedin: () =>
       redirectPage("https://www.linkedin.com/in/karl-thomsson-38203819b/"),
     email: () => {
-      window.location.href = "mailto:thomsson_99@hotmail.com";
+      window.location.href = "mailto:thomsson_99@hotmail.com"
     },
   }
 
@@ -44,36 +44,25 @@ function App() {
     themePromptColor: "#fbfbfb",
   }
 
-  /*const [date, setDate] = useState<Date>(new Date())
-
-  useEffect(() => {
-    const intervalID = setInterval(() => {
-      setDate(new Date())
-    }, 1000)
-    return () => clearInterval(intervalID)
-  }, [])
-
-  const formattedDate = date.toLocaleDateString()
-  const formattedTime = date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })*/
-  const [dateTime, setDateTime] = useState(getDateTime);
+  const [dateTime, setDateTime] = useState(getDateTime)
 
   function getDateTime() {
-    const now = new Date();
-    const year = now.getFullYear();
-    const month = (now.getMonth() + 1).toString().padStart(2, '0');
-    const day = now.getDate().toString().padStart(2, '0');
-    const hours = now.getHours().toString().padStart(2, '0');
-    const minutes = now.getMinutes().toString().padStart(2, '0');
-    const seconds = now.getSeconds().toString().padStart(2, '0');
-    return `${year}-${month}-${day}, ${hours}:${minutes}:${seconds}`;
+    const now = new Date()
+    const year = now.getFullYear()
+    const month = (now.getMonth() + 1).toString().padStart(2, '0')
+    const day = now.getDate().toString().padStart(2, '0')
+    const hours = now.getHours().toString().padStart(2, '0')
+    const minutes = now.getMinutes().toString().padStart(2, '0')
+    const seconds = now.getSeconds().toString().padStart(2, '0')
+    return `${year}-${month}-${day}, ${hours}:${minutes}:${seconds}`
   }
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setDateTime(getDateTime());
-    }, 1000);
-    return () => clearInterval(interval);
-  }, []);
+      setDateTime(getDateTime())
+    }, 1000)
+    return () => clearInterval(interval)
+  }, [])
 
   return (
     <div className="App">
@@ -95,7 +84,7 @@ function App() {
         />
       </TerminalContextProvider>   
       <div className='terminal-footer'>
-        <div style={{display: 'flex', padding:'5px'}}>
+        <div style={{display: 'flex', padding:'5px', alignItems:'center'}}>
           <Circle/> <span style={{marginLeft: '5px', color: '#121212'}}>Uppsala, Sweden</span>
         </div>
         <div style={{display: 'flex', padding:'5px', color:'#121212'}}>
