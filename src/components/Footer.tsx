@@ -18,17 +18,17 @@ function Footer() {
         <Toolbar >
           <Box display="flex" flexGrow={1} alignItems='center' justifyContent='center'>
             <IconButton href="mailto: thomsson_99@hotmail.com">
-              <MailIcon sx={{ height: "4vh", width: "4vh", color: '#fff', '&:hover': {color: '#757761'}, left:0  }} />
+              <MailIcon sx={{ height: "40px", width: "40px", color: '#fff', '&:hover': {color: '#757761'}, left:0  }} />
             </IconButton>
             <IconButton
               onClick={() => redirectPage("https://www.linkedin.com/in/karl-thomsson-38203819b/")}
             >
-              <LinkedInIcon sx={{ height: "4vh", width: "4vh", color: '#fff', '&:hover': {color: '#757761'}, right: 0 }} />
+              <LinkedInIcon sx={{ height: "40px", width: "40px", color: '#fff', '&:hover': {color: '#757761'}, right: 0 }} />
             </IconButton>
             <IconButton
               onClick={() => redirectPage("https://github.com/thomssonkarl")}
             >
-              <GitHubIcon sx={{ height: "4vh", width: "4vh", color: '#fff', '&:hover': {color: '#757761'} }} />
+              <GitHubIcon sx={{ height: "40px", width: "40px", color: '#fff', '&:hover': {color: '#757761'} }} />
             </IconButton>
           </Box>
         </Toolbar>
