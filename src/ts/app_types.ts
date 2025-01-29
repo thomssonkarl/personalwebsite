@@ -10,7 +10,7 @@ export interface TerminalTheme {
 interface Commands {
     help: () => JSX.Element;
     clear: string;
-    aboutme: string;
+    aboutme: Command;
   }
   
 type RedirectFunction = () => void;

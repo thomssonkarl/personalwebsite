@@ -13,7 +13,8 @@ function App() {
     window.open(destination, '_blank')
   }
 
-  const aboutMeMessage = 'Hi! My name is Karl Thomsson. I am based in Uppsala, Sweden. I am currently studying Information Technology Engineering at Uppsala University.'
+  const aboutMeMessage = 'Hi! My name is Karl Thomsson. I am based in Stockholm, Sweden and I am currently working as a Software Engineer. I hold a M.Sc in Computer and Information Engineering at Uppsala University.'
+  const aboutMeCont = 'I have a deep passion for computers, particularly systems programming and working with low-level languages. I enjoy exploring how software interacts with hardware and optimizing performance. Writing efficient and scalable code in languages like C and C++ is something I find both challenging and rewarding.' 
    
   const commands : Types.CommandsExtended = {
     help: () => {
@@ -28,7 +29,14 @@ function App() {
       );
     },
     clear: "",
-    aboutme: aboutMeMessage,
+    aboutme: () => {
+      return (
+        <span>
+            {aboutMeMessage} <br/><br/>
+            {aboutMeCont}
+        </span>
+      );
+    }, 
     github: () => redirectPage("https://github.com/thomssonkarl"),
     linkedin: () =>
       redirectPage("https://www.linkedin.com/in/karl-thomsson-38203819b/"),
@@ -85,7 +93,7 @@ function App() {
       </TerminalContextProvider>   
       <div className='terminal-footer'>
         <div style={{display: 'flex', padding:'5px', alignItems:'center'}}>
-          <Circle/> <span style={{marginLeft: '5px', color: '#121212'}}>Uppsala, Sweden</span>
+          <Circle/> <span style={{marginLeft: '5px', color: '#121212'}}>Stockholm, Sweden</span>
         </div>
         <div style={{display: 'flex', padding:'5px', color:'#121212'}}>
           <span>{dateTime.split(',')[0]}</span> 

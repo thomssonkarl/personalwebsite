@@ -6,7 +6,7 @@ function Navbar() {
     <div className='toolbar-top'>
       <AppBar position="static" sx={{backgroundColor: '#121212', marginTop: '20px'}} elevation={0}> 
         <Toolbar>
-          <div className="header-title">Karl Thomsson <br/> University Student & Programmer</div>
+          <div className="header-title">Karl Thomsson <br/> Software Engineer & Computer Enthusiast </div>
         </Toolbar>
       </AppBar>
     </div>
